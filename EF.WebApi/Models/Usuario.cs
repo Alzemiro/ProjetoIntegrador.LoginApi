@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace EF.WebApi.Models
+namespace ProjetoV.Models
 {
     public class Usuario
     {
