@@ -10,7 +10,6 @@ using ProjetoV.Models;
 
 namespace ProjetoV.Controllers
 {
-    [Authorize]
     [Route("api")]
     [ApiController]
     [AllowAnonymous]
@@ -27,6 +26,7 @@ namespace ProjetoV.Controllers
         [HttpGet("times")]
         public async Task<ActionResult<IEnumerable<Time>>> GetTimes()
         {
+           
             return await _context.Times.ToListAsync();
         }
 

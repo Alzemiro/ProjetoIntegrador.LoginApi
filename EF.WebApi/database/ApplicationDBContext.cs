@@ -9,6 +9,12 @@ namespace ProjetoV.database
     public class ApplicationDBContext : DbContext
     {
         
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql("server=localhost;port=3306;database=projeto;uid=root;password=admin");
+        }
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Campeonato> Campeonato { get; set; }
         public DbSet<Clube> Clubes { get; set; }
@@ -18,10 +24,5 @@ namespace ProjetoV.database
         public DbSet<Rodada> Rodadas { get; set; }
         public DbSet<Temporada> Temporadas { get; set; }
         public DbSet<Time> Times { get; set; }
-        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
-        {
-        
-           
-        }
     }
 }
